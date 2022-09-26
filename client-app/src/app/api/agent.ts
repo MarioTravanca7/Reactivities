@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { resolve } from 'path';
+//import { resolve } from 'path';
 import { Activity } from '../models/activity';
 
 const sleep = (delay: number) => {
