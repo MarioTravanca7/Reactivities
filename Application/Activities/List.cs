@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Core;
 using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +13,11 @@ namespace Application.Activities
 {
     public class List
     {
-        public class Query : IRequest<List<Activity>>{
+        public class Query : IRequest<Result<List<Activity>>>{
 
         }
 
-        public class Handler : IRequestHandler<Query, List<Activity>>
+        public class Handler : IRequestHandler<Query, Result<List<Activity>>>
         {
         private readonly DataContext _context;
        
@@ -25,20 +26,9 @@ namespace Application.Activities
                 _context = context;
             }
 
-            public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<List<Activity>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                /*try{
-                    for(var i=0; i < 10; i++)
-                    {
-                        cancellationToken.ThrowIfCancellationRequested();
-                        await Task.Delay(1000, cancellationToken);
-                        _logger.LogInformation($"Task {i} has completed");
-                    }
-                }catch(Exception ex) when (ex is TaskCanceledException){
-                    _logger.LogInformation("Task was cancelled");
-                }*/
-
-                return await _context.Activities.ToListAsync(cancellationToken);
+                return Result<List<Activity>>.Success(await _context.Activities.ToListAsync(cancellationToken));
             }
         }
     }
