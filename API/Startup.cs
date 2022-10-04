@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Extensions;
-using API.MIddleware;
+using API.Middleware;
 using Application.Activities;
 using Application.Core;
 using FluentValidation.AspNetCore;
@@ -28,15 +28,11 @@ namespace API
         public Startup(IConfiguration config)
         {
             this._config = config;
-            //Configuration = configuration;
         }
-
-       // public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers().AddFluentValidation(config => 
             {
                 config.RegisterValidatorsFromAssemblyContaining<Create>();
@@ -51,7 +47,6 @@ namespace API
 
             if (env.IsDevelopment())
             {
-                //app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIv5 v1"));
             }
@@ -71,3 +66,4 @@ namespace API
         }
     }
 }
+//app.UseDeveloperExceptionPage();
