@@ -5,7 +5,8 @@ import { Form, Label } from 'semantic-ui-react';
 interface Props{
     placeholder: string;
     name: string;
-    label?: string;
+    type?: string; //? is means optional
+    label?: string; //? is means optional 
 }
 
 export default function MyTextInput(props: Props){
