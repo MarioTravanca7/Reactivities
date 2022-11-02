@@ -1,3 +1,4 @@
+import { is } from "date-fns/locale";
 import { errorMonitor } from "events";
 import { makeAutoObservable, runInAction } from "mobx";
 import { history } from "../..";
@@ -58,4 +59,9 @@ export default class UserStore {
     setImage = (image: string) => {
         if (this.user) this.user.image = image;
     }
+
+    setDisplayName = (name: string) => {
+        if (this.user) this.user.displayName = name;
+       }
+       
 }
