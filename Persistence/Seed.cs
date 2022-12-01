@@ -47,7 +47,7 @@ namespace Persistence
                     {
                         Title = "Past Activity 1",
                         Date = DateTime.UtcNow.AddMonths(-2),
-                        Description = "Activity 2 months ago",
+                        Description = "Activity 3 months ago",
                         Category = "drinks",
                         City = "London",
                         Venue = "Pub",
