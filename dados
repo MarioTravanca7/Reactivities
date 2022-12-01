@@ -1,0 +1,8 @@
+Username:    postgres
+  Password:    r66EDJIjmWwTLNA
+  Hostname:    reactivities-mario-db.internal
+  Proxy port:  5432
+  Postgres port:  5433
+  Connection string: postgres://postgres:r66EDJIjmWwTLNA@reactivities-mario-db.internal:5432
+
+  HNzE2IzJjDtbCkXT2UJKzpauAna6KbDb

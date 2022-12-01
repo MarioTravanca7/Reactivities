@@ -7,15 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.10" /><!-- Done -->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.0" /><!-- Done -->
+    
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0"><!-- Done -->
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets> <!-- Done -->
+      <PrivateAssets>all</PrivateAssets><!-- Done -->
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.8" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.23.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.23.1" />
+    
+    <!-- <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />  -->
+    <!-- <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.8" /> -->
+    <!-- <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.23.1" /> -->
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" /> <!-- Done -->
+    <!-- <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.23.1" /> -->
   </ItemGroup>
 
   <ItemGroup>
