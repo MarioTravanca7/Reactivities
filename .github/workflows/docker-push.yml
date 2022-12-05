@@ -5,7 +5,8 @@ on:
   # push:
   #   branches:
   #     - 'main'
-
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -23,5 +24,14 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: "{{defaultContext}}:API"
           push: true
           tags: mariotravanca/reactivities:latest
+  deploy:
+      needs: docker
+      name: Deploy app
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: superfly/flyctl-actions/setup-flyctl@master
+        - run: flyctl deploy --remote-only
