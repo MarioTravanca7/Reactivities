@@ -5,6 +5,8 @@ Username:    postgres
   Postgres port:  5433
   Connection string: postgres://postgres:r66EDJIjmWwTLNA@reactivities-mario-db.internal:5432
 
+  ----------------------------------------------------------
+
   HNzE2IzJjDtbCkXT2UJKzpauAna6KbDb
 
 -------------------------------------------------------------

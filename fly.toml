@@ -9,7 +9,7 @@ processes = []
   image = "mariotravanca/reactivities:latest"
 
 [env]
-  ASPNETCORE_URL="http://+:8080"
+  ASPNETCORE_URLS="http://+:8080"
   Cloudinary__CloudName="dowkcyhbw"
   Cloudinary__ApiKey="122163524312146"
 
