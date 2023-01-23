@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import React, { useState, useEffect } from "react";
 import { Button, Header, Segment } from "semantic-ui-react";
 import { useStore } from "../../../app/stores/store";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import { v4 as uuid } from 'uuid';
 import { Formik, Form } from "formik";
@@ -15,7 +15,7 @@ import MyDateInput from "../../../app/common/form/MyDateInput";
 import { ActivityFormValues } from "../../../app/models/activity";
 
 export default observer(function ActivityForm() {
-    const history = useHistory();
+    const navigate = useNavigate();
     const { activityStore } = useStore();
     const { createActivity, updateActivity, loadActivity, loadingInitial } = activityStore;
     const { id } = useParams<{ id: string }>();
@@ -41,9 +41,9 @@ export default observer(function ActivityForm() {
                 ...activity,
                 id: uuid()
             };
-            createActivity(newActivity).then(() => history.push(`/activities/${newActivity.id}`))
+            createActivity(newActivity).then(() => navigate(`/activities/${newActivity.id}`))
         }else{
-            updateActivity(activity).then(()=> history.push(`/activities/${activity.id}`))
+            updateActivity(activity).then(()=> navigate(`/activities/${activity.id}`))
         }
     }
 
