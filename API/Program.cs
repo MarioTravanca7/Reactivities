@@ -44,7 +44,8 @@ if (builder.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIv5 v1"));
 }
-else{
+else
+{
     app.Use(async (context, next) =>
     {
         context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000");
@@ -62,10 +63,9 @@ app.UseStaticFiles();
 
 app.MapControllers();
 app.MapHub<ChatHub>("/chat");
-//endpoints.MapFallbackToController("Index", "Fallback");
+app.MapFallbackToController("Index", "Fallback");
 
 using var scope = app.Services.CreateScope();
-
 var services = scope.ServiceProvider;
 
 try
@@ -74,7 +74,6 @@ try
     var userManager = services.GetRequiredService<UserManager<AppUser>>();
     await context.Database.MigrateAsync();
     await Seed.SeedData(context, userManager);
-
 }
 catch (Exception ex)
 {
