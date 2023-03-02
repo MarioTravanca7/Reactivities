@@ -12,6 +12,7 @@ processes = []
   ASPNETCORE_URLS="http://+:8080"
   Cloudinary__CloudName="dowkcyhbw"
   Cloudinary__ApiKey="122163524312146"
+  Facebook__AppId="523269269794553"
 
 [experimental]
   allowed_public_ports = []
