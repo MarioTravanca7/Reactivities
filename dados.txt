@@ -42,3 +42,7 @@ jobs:
 
 
 _______
+links
+https://github.com/MarioTravanca7/Reactivities/actions                        -git hub
+https://developers.facebook.com/apps/523269269794553/fb-login/settings/       - facebook devs
+https://fly.io/dashboard - fly.io
